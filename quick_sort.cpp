@@ -28,7 +28,7 @@ void handle(int *num, int tmp, int &i, int &j) { //i，j为引用类型
 
 void quick_sort(int *num, int l, int r) {
     if (l >= r) return ; //证明已经排好序了，直接结束调用即可
-    int tmp = num[(l + r) / 2], i = l, j = r; //选取基准(序列的中间最快(猜测与序列的有序程度有关，取中间值能降低递归深度)，所以选取序列的中间值), i为左区间选择的值的序号（左针），j为右区间选择的序号（右针）
+    int tmp = num[(l + r) / 2], i = l, j = r; //选取基准(序列的中间最快,猜测与序列的有序程度有关,取中间值能降低递归深度,可以拿一个逆序序列带入), i为左区间选择的值的序号（左针），j为右区间选择的序号（右针）
     handle(num, tmp, i, j); //对选取的区间进行处理
     quick_sort(num, l, j); //对选取的左边和右边的范围如法炮制（中间有个值将被空出来，因为单个数字为有序）
     quick_sort(num, i, r);
